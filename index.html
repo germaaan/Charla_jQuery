@@ -87,169 +87,6 @@
                       </ul>
                   </p>
               </section>
-
-              <section>
-                  <h3> Manipular elementos del HTML/DOM </h3>
-                  <pre>
-                    <code data-trim contenteditable>
-                      <input id="nombre" type="text"/>
-                    </code>
-                  </pre>
-                  <p>
-                      Usando JavaScript estándar:
-                      <pre>
-                        <code data-trim contenteditable>
-                          document.getElementById("nombre") = "Germán";
-                        </code>
-                      </pre>
-                  </p>
-                  <p>
-                      Usando jQuery:
-                      <pre>
-                        <code data-trim contenteditable>
-                          $("#nombre").val("Germán);
-                      </code>
-                    </pre>
-                  </p>
-              </section>
-
-              <section>
-                  <h3> Manipular elementos del CSS </h3>
-                  <pre>
-                    <code data-trim contenteditable>
-                      <input id="nombre" type="text"/>
-                    </code>
-                  </pre>
-                  <p>
-                      Usando CSS:
-                      <pre>
-                        <code data-trim contenteditable>
-                          document.getElementById("cuadro").style.background-color = "red";
-document.getElementById("cuadro").style.border-color = "black";
-                        </code>
-                      </pre>
-                  </p>
-                  <p>
-                      Usando jQuery:
-                      <pre>
-                        <code data-trim contenteditable>
-                          $("#cuadro").css({"background-color":"red", "border-color":"black"});
-                      </code>
-                    </pre>
-                  </p>
-              </section>
-
-              <section>
-                  <h3> Gestionar eventos HTML</h3>
-                  <pre>
-                    <code data-trim contenteditable>
-                      <input id="github" type="button" value="GitHub">
-                    </code>
-                  </pre>
-                  <p>
-                      Usando JavaScript estándar:
-                      <pre>
-                        <code data-trim contenteditable>
-                          <input id="github" type="button" value="GitHub" onclick="cargarJSON()">
-     OR
-document.getElementById("github").addEventListener('click', cargarJSON);
-                        </code>
-                      </pre>
-                  </p>
-                  <p>
-                      Usando jQuery:
-                      <pre>
-                        <code data-trim contenteditable>
-                          $("#github").click(function() {
-  ...
-});
-                      </code>
-                    </pre>
-                  </p>
-              </section>
-
-              <section>
-                  <h3> Crea efectos y animaciones </h3>
-                  <p>
-                      Usando JavaScript estándar:
-                      <pre>
-                        <code data-trim contenteditable>
-                          function fadeOutEffect() {
-    var fadeTarget = document.getElementById("cuadro");
-    var fadeEffect = setInterval(function () {
-        if (!fadeTarget.style.opacity) {
-            fadeTarget.style.opacity = 1;
-        }
-        if (fadeTarget.style.opacity < 0.1) {
-            clearInterval(fadeEffect);
-        } else {
-            fadeTarget.style.opacity -= 0.1;
-        }
-    }, 200);
-}
-                        </code>
-                      </pre>
-                  </p>
-                </section>
-                <section>
-                  <h3> Crea efectos y animaciones </h3>
-                  <p>
-                      Usando jQuery:
-                      <pre>
-                        <code data-trim contenteditable>
-                          $("cuadro").click(function(){
-    $("#cuadro").fadeOut(200);
-});
-                      </code>
-                    </pre>
-                  </p>
-              </section>
-
-              <section>
-                  <h3> Usar AJAX (Ej: recuperar archivo JSON) </h3>
-                  <p>
-                      Usando JavaScript estándar:
-                      <pre>
-                        <code data-trim contenteditable>
-                          function cargarJSON() {
-    var xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var objeto = JSON.parse(http_request.responseText);
-        document.getElementById("nombre") = objeto.login;
-      }
-    };
-
-    xhttp.open("GET", "https://api.github.com/users/germaaan", true);
-    xhttp.send();
-}
-                        </code>
-                      </pre>
-                  </p>
-              </section>
-
-              <section>
-                  <h3> Usar AJAX (Ej: recuperar archivo JSON) </h3>
-                  <p>
-                      Usando jQuery:
-                      <pre>
-                        <code data-trim contenteditable>
-                          $.getJSON("https://api.github.com/users/germaaan", function(data) {
-    $("#nombre").val(data.login);
-});
-                      </code>
-                    </pre>
-                  </p>
-              </section>
-
-              <section>
-                  <h3> Escribir menos, hacer más </h3>
-                  <p class="fragment">
-                      Genial, ¿eh?
-                  </p>
-                  <img class="fragment" src="images/kanye.gif" alt="kanye_approves" style="width:70%; height:70%">
-              </section>
             </section>
 
             <section>
@@ -367,6 +204,174 @@ document.getElementById("github").addEventListener('click', cargarJSON);
                     </table></div>
                     <br><hr>
                   <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp"> jQuery Selectors | w3schools.com </a>
+                </section>
+              </section>
+
+              <section>
+                <section>
+                <h3> Comparación JavaScript estándar / jQuery </h3>
+              </section>
+                <section>
+                    <h3> Manipular elementos del HTML/DOM </h3>
+                    <pre>
+                      <code data-trim contenteditable>
+                        <input id="nombre" type="text"/>
+                      </code>
+                    </pre>
+                    <p>
+                        Usando JavaScript estándar:
+                        <pre>
+                          <code data-trim contenteditable>
+                            document.getElementById("nombre") = "Germán";
+                          </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Usando jQuery:
+                        <pre>
+                          <code data-trim contenteditable>
+                            $("#nombre").val("Germán);
+                        </code>
+                      </pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h3> Manipular elementos del CSS </h3>
+                    <pre>
+                      <code data-trim contenteditable>
+                        <input id="nombre" type="text"/>
+                      </code>
+                    </pre>
+                    <p>
+                        Usando CSS:
+                        <pre>
+                          <code data-trim contenteditable>
+                            document.getElementById("cuadro").style.background-color = "red";
+  document.getElementById("cuadro").style.border-color = "black";
+                          </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Usando jQuery:
+                        <pre>
+                          <code data-trim contenteditable>
+                            $("#cuadro").css({"background-color":"red", "border-color":"black"});
+                        </code>
+                      </pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h3> Gestionar eventos HTML</h3>
+                    <pre>
+                      <code data-trim contenteditable>
+                        <input id="github" type="button" value="GitHub">
+                      </code>
+                    </pre>
+                    <p>
+                        Usando JavaScript estándar:
+                        <pre>
+                          <code data-trim contenteditable>
+                            <input id="github" type="button" value="GitHub" onclick="cargarJSON()">
+       OR
+  document.getElementById("github").addEventListener('click', cargarJSON);
+                          </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Usando jQuery:
+                        <pre>
+                          <code data-trim contenteditable>
+                            $("#github").click(function() {
+    ...
+  });
+                        </code>
+                      </pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h3> Crea efectos y animaciones </h3>
+                    <p>
+                        Usando JavaScript estándar:
+                        <pre>
+                          <code data-trim contenteditable>
+                            function fadeOutEffect() {
+      var fadeTarget = document.getElementById("cuadro");
+      var fadeEffect = setInterval(function () {
+          if (!fadeTarget.style.opacity) {
+              fadeTarget.style.opacity = 1;
+          }
+          if (fadeTarget.style.opacity < 0.1) {
+              clearInterval(fadeEffect);
+          } else {
+              fadeTarget.style.opacity -= 0.1;
+          }
+      }, 200);
+  }
+                          </code>
+                        </pre>
+                    </p>
+                  </section>
+                  <section>
+                    <h3> Crea efectos y animaciones </h3>
+                    <p>
+                        Usando jQuery:
+                        <pre>
+                          <code data-trim contenteditable>
+                            $("cuadro").click(function(){
+      $("#cuadro").fadeOut(200);
+  });
+                        </code>
+                      </pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h3> Usar AJAX (Ej: recuperar archivo JSON) </h3>
+                    <p>
+                        Usando JavaScript estándar:
+                        <pre>
+                          <code data-trim contenteditable>
+                            function cargarJSON() {
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          var objeto = JSON.parse(http_request.responseText);
+          document.getElementById("nombre") = objeto.login;
+        }
+      };
+
+      xhttp.open("GET", "https://api.github.com/users/germaaan", true);
+      xhttp.send();
+  }
+                          </code>
+                        </pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h3> Usar AJAX (Ej: recuperar archivo JSON) </h3>
+                    <p>
+                        Usando jQuery:
+                        <pre>
+                          <code data-trim contenteditable>
+                            $.getJSON("https://api.github.com/users/germaaan", function(data) {
+      $("#nombre").val(data.login);
+  });
+                        </code>
+                      </pre>
+                    </p>
+                </section>
+
+                <section>
+                    <h3> Escribir menos, hacer más </h3>
+                    <p class="fragment">
+                        Genial, ¿eh?
+                    </p>
+                    <img class="fragment" src="images/kanye.gif" alt="kanye_approves" style="width:70%; height:70%">
                 </section>
               </section>
 
