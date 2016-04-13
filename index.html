@@ -60,115 +60,315 @@
             </section>
 
             <section>
+            <section>
                 <img alt="image" src="images/jquery.png" height="43%" width="43%" />
                 <h3>¿Qué es?</h3>
-                <p class="fragment">
-                    Una librería JavaScript que facilita:
-                    <ul>
-                        <li class="fragment"> Manipular elementos del DOM </li>
-                        <li class="fragment"> Gestionar eventos </li>
-                        <li class="fragment"> Usar AJAX </li>
-                    </ul>
-                </p>
+                <ul>
+                  <li class="fragment"> Una librería de JavaScript open source que nos facilita el desarrollo de código en ese lenguaje </li>
+                  <li class="fragment"> Gran ventaja: independiente del navegador </li>
+                  <li class="fragment"> Versión actual: 2.2.3 </li>
+                  <li class="fragment"> Sin soporte para IE 6/7/8 <i class="fragment">(Una pena...)</i></li>
+                </ul>
+            </section>
             </section>
 
             <section>
-                <h3> Manipular elementos del DOM </h3>
-                <pre>
-                  <code data-trim contenteditable>
-                    <input id="nombre" type="text"/>
-                  </code>
-                </pre>
-                <p>
-                    Usando JavaScript estándar:
-                    <pre>
-                      <code data-trim contenteditable>
-                        document.getElementById("nombre") = "Germán";
-                      </code>
-                    </pre>
-                </p>
-                <p>
-                    Usando jQuery:
-                    <pre>
-                      <code data-trim contenteditable>
-                        $("#nombre").val("Germán);
+              <section>
+                  <h2>¿Qué hace?</h2>
+                  <p>
+                      Entre otras cosas es especialmente popular por facilitar:
+                      <ul>
+                          <li class="fragment"> Manipulación elementos del HTML/DOM </li>
+                          <li class="fragment"> Manipulación elementos CSS </li>
+                          <li class="fragment"> Gestión eventos HTML </li>
+                          <li class="fragment"> Crea efectos y animaciones </li>
+                          <li class="fragment"> Uso de AJAX </li>
+                          <li class="fragment"> Otras utilidades </li>
+                      </ul>
+                  </p>
+              </section>
+
+              <section>
+                  <h3> Manipular elementos del HTML/DOM </h3>
+                  <pre>
+                    <code data-trim contenteditable>
+                      <input id="nombre" type="text"/>
                     </code>
                   </pre>
-                </p>
+                  <p>
+                      Usando JavaScript estándar:
+                      <pre>
+                        <code data-trim contenteditable>
+                          document.getElementById("nombre") = "Germán";
+                        </code>
+                      </pre>
+                  </p>
+                  <p>
+                      Usando jQuery:
+                      <pre>
+                        <code data-trim contenteditable>
+                          $("#nombre").val("Germán);
+                      </code>
+                    </pre>
+                  </p>
+              </section>
+
+              <section>
+                  <h3> Manipular elementos del CSS </h3>
+                  <pre>
+                    <code data-trim contenteditable>
+                      <input id="nombre" type="text"/>
+                    </code>
+                  </pre>
+                  <p>
+                      Usando CSS:
+                      <pre>
+                        <code data-trim contenteditable>
+                          document.getElementById("cuadro").style.background-color = "red";
+document.getElementById("cuadro").style.border-color = "black";
+                        </code>
+                      </pre>
+                  </p>
+                  <p>
+                      Usando jQuery:
+                      <pre>
+                        <code data-trim contenteditable>
+                          $("#cuadro").css({"background-color":"red", "border-color":"black"});
+                      </code>
+                    </pre>
+                  </p>
+              </section>
+
+              <section>
+                  <h3> Gestionar eventos HTML</h3>
+                  <pre>
+                    <code data-trim contenteditable>
+                      <input id="github" type="button" value="GitHub">
+                    </code>
+                  </pre>
+                  <p>
+                      Usando JavaScript estándar:
+                      <pre>
+                        <code data-trim contenteditable>
+                          <input id="github" type="button" value="GitHub" onclick="cargarJSON()">
+     OR
+document.getElementById("github").addEventListener('click', cargarJSON);
+                        </code>
+                      </pre>
+                  </p>
+                  <p>
+                      Usando jQuery:
+                      <pre>
+                        <code data-trim contenteditable>
+                          $("#github").click(function() {
+  ...
+});
+                      </code>
+                    </pre>
+                  </p>
+              </section>
+
+              <section>
+                  <h3> Crea efectos y animaciones </h3>
+                  <p>
+                      Usando JavaScript estándar:
+                      <pre>
+                        <code data-trim contenteditable>
+                          function fadeOutEffect() {
+    var fadeTarget = document.getElementById("cuadro");
+    var fadeEffect = setInterval(function () {
+        if (!fadeTarget.style.opacity) {
+            fadeTarget.style.opacity = 1;
+        }
+        if (fadeTarget.style.opacity < 0.1) {
+            clearInterval(fadeEffect);
+        } else {
+            fadeTarget.style.opacity -= 0.1;
+        }
+    }, 200);
+}
+                        </code>
+                      </pre>
+                  </p>
+                </section>
+                <section>
+                  <h3> Crea efectos y animaciones </h3>
+                  <p>
+                      Usando jQuery:
+                      <pre>
+                        <code data-trim contenteditable>
+                          $("cuadro").click(function(){
+    $("#cuadro").fadeOut(200);
+});
+                      </code>
+                    </pre>
+                  </p>
+              </section>
+
+              <section>
+                  <h3> Usar AJAX (Ej: recuperar archivo JSON) </h3>
+                  <p>
+                      Usando JavaScript estándar:
+                      <pre>
+                        <code data-trim contenteditable>
+                          function cargarJSON() {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var objeto = JSON.parse(http_request.responseText);
+        document.getElementById("nombre") = objeto.login;
+      }
+    };
+
+    xhttp.open("GET", "https://api.github.com/users/germaaan", true);
+    xhttp.send();
+}
+                        </code>
+                      </pre>
+                  </p>
+              </section>
+
+              <section>
+                  <h3> Usar AJAX (Ej: recuperar archivo JSON) </h3>
+                  <p>
+                      Usando jQuery:
+                      <pre>
+                        <code data-trim contenteditable>
+                          $.getJSON("https://api.github.com/users/germaaan", function(data) {
+    $("#nombre").val(data.login);
+});
+                      </code>
+                    </pre>
+                  </p>
+              </section>
+
+              <section>
+                  <h3> Escribir menos, hacer más </h3>
+                  <p class="fragment">
+                      Genial, ¿eh?
+                  </p>
+                  <img class="fragment" src="images/kanye.gif" alt="kanye_approves" style="width:70%; height:70%">
+              </section>
             </section>
 
             <section>
-                <h3> Gestionar eventos </h3>
-                <pre>
-                  <code data-trim contenteditable>
-                    <input id="github" type="button" value="GitHub">
-                  </code>
-                </pre>
-                <p>
-                    Usando JavaScript estándar:
-                    <pre>
-                      <code data-trim contenteditable>
-                        <input id="github" type="button" value="GitHub" onclick="cargarJSON()">
+              <h3> Instalación </h3>
+              <ul>
+                  <div class="fragment">
+                    <li> Página web: <a href="https://jquery.com/download/"> https://jquery.com/download/ </a> </li>
+                    <hr>
+                  </div>
+                  <div class="fragment">
+                    <li> CND: <a href="https://code.jquery.com/jquery-2.2.3.min.js"> https://code.jquery.com/jquery-2.2.3.min.js </a> </li>
+                    <hr>
+                  </div>
+                  <div class="fragment">
+                    <li> Gestor de paquetes del lenguaje (Ejemplo -> Node.js/Bower):
+                      <pre>
+                        <code data-trim contenteditable>
+                          bower install jQuery
                       </code>
                     </pre>
-                </p>
-                <p>
-                    Usando jQuery:
-                    <pre>
-                      <code data-trim contenteditable>
-                        $("#github").click(function() {
+                    <hr>
+                    </li>
+                  </div>
+              </ul>
+            </section>
+
+            <section>
+              <section>
+                <h3> Uso </h3>
+                  <h5> ejemplo.html </h5>
+                  <pre>
+                    <code data-trim contenteditable>
+                      <script src="../jquery-2.2.3.min.js"></script>
+<script src="codigo.js"></script>
+                    </code>
+                  </pre>
+
+                  <h5> codigo.js </h5>
+                  <pre>
+                    <code data-trim contenteditable>
+                      $(document).ready(function(){
      ...
 });
                     </code>
                   </pre>
-                </p>
-            </section>
-
-            <section>
-                <h3> Usar AJAX (Ej: recuperar archivo JSON) </h3>
-                <p>
-                    Usando JavaScript estándar:
-                    <pre>
-                      <code data-trim contenteditable>
-                        function cargarJSON() {
-  var xhttp = new XMLHttpRequest();
-
-  xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      var objeto = JSON.parse(http_request.responseText);
-      document.getElementById("nombre").innerHTML = objeto.login;
-    }
-  };
-
-  xhttp.open("GET", "https://api.github.com/users/germaaan", true);
-  xhttp.send();
-}
-                      </code>
-                    </pre>
-                </p>
-            </section>
-
-            <section>
-                <h3> Usar AJAX (Ej: recuperar archivo JSON) </h3>
-                <p>
-                    Usando jQuery:
-                    <pre>
-                      <code data-trim contenteditable>
-                        $.getJSON("https://api.github.com/users/germaaan", function(data) {
-  $("#nombre").val(data.login);
+                  <pre>
+                    <code data-trim contenteditable>
+                      $(function(){
+     ...
 });
                     </code>
                   </pre>
-                </p>
-            </section>
-
-            <section>
-                <h3> Escribir menos, hacer más </h3>
-                <p class="fragment">
-                  Genial, ¿eh?
-                </p>
-                <img class="fragment" src="images/kanye.gif" alt="kanye_approves" style="width:70%; height:70%">
-            </section>
+                </section>
+                <section>
+                  <h4> Selectores </h4>
+                  <style type="text/css">
+                    .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+                    .tg td{font-family:Arial, sans-serif;font-size:20px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+                    .tg th{font-family:Arial, sans-serif;font-size:20px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+                    .tg .tg-baqh{text-align:center;vertical-align:top}
+                    .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+                    .tg .tg-5frq{font-style:italic;text-align:center;vertical-align:top}
+                    @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
+                    <div class="tg-wrap"><table class="tg">
+                      <tr>
+                        <th class="tg-amwm">Selector</th>
+                        <th class="tg-amwm">Ejemplo</th>
+                        <th class="tg-amwm">Selecciona</th>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">*</td>
+                        <td class="tg-baqh">$("*")</td>
+                        <td class="tg-baqh">Todos los elementos</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">#id</td>
+                        <td class="tg-baqh">$("#prueba")</td>
+                        <td class="tg-baqh">Elementos con id "prueba"</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">.class</td>
+                        <td class="tg-baqh">$(".otra")</td>
+                        <td class="tg-baqh">Elementos con clase "otra"</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">element</td>
+                        <td class="tg-baqh">$("p")</td>
+                        <td class="tg-baqh">Elementos &lt;p&gt;</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">:header</td>
+                        <td class="tg-baqh">$(":header")</td>
+                        <td class="tg-baqh">Todos los &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;...</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">:input</td>
+                        <td class="tg-baqh">$(":input")</td>
+                        <td class="tg-baqh">Todos los inputs</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">:first</td>
+                        <td class="tg-baqh">$("p:first")</td>
+                        <td class="tg-baqh">Primer &lt;p&gt;</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">:hidden</td>
+                        <td class="tg-baqh">$("p:hidden")</td>
+                        <td class="tg-baqh">Todos los &lt;p&gt; ocultos</td>
+                      </tr>
+                      <tr>
+                        <td class="tg-5frq">[attribute=value]</td>
+                        <td class="tg-baqh">$("[href='index.htm']")</td>
+                        <td class="tg-baqh">Todos los elementos con un atributo href igual a "index.html"</td>
+                      </tr>
+                    </table></div>
+                    <br><hr>
+                  <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp"> jQuery Selectors | w3schools.com </a>
+                </section>
+              </section>
 
         </div>
 
