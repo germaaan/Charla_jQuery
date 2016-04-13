@@ -20,6 +20,8 @@
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
+    <link rel="stylesheet" href="css/tablas.css">
+
     <!-- Printing and PDF exports -->
     <script>
         var link = document.createElement('link');
@@ -44,13 +46,15 @@
                 <h2>jQuery cambia, jQuery repara</h2>
                 <p style="line-height: 43%">
                     <font size="4">
-                      Germán Martínez Maldonado
-                      <br/> (
-                      <a href="https://github.com/germaaan">@germaaan</a> /
-                      <a href="https://twitter.com/germaaan_">@germaaan_</a>)
-                      <br/>Oficina de Software Libre de la Universidad de Granada
-                      <br/>(<a href="https://twitter.com/OSLUGR">@OSLUGR</a> /
-                      <a href="https://www.facebook.com/SoftwareLibreUGR">@SoftwareLibreUGR</a>)
+                      <i style="font-size: 25px;">Germán Martínez Maldonado</i>
+                      <br/>
+                      (<strong>GitHub</strong>: <a href="https://github.com/germaaan"> @germaaan</a> /
+                      <strong>Twitter</strong>: <a href="https://twitter.com/germaaan_">@germaaan_</a>)
+                      <br/><br/><i style="font-size: 25px;">Oficina de Software Libre de la Universidad de Granada</i>
+                      <br/>(<strong>Twitter</strong>: <a href="https://twitter.com/OSLUGR">@OSLUGR</a> /
+                      <strong>Facebook</strong>: <a href="https://www.facebook.com/SoftwareLibreUGR">@SoftwareLibreUGR</a>)
+                      <br/><br/><i style="font-size: 25px;">Granada Geek</i>
+                      <br/>(<a href="http://www.meetup.com/es-ES/Granada-Geek/">http://www.meetup.com/es-ES/Granada-Geek/</a>)
                     </font>
                     <br/>
                     <img alt="image" src="images/osl.png" height="300" />
@@ -141,15 +145,21 @@
                   </pre>
                 </section>
                 <section>
+                  <h3> Sintaxis </h3>
+                  <p> Seleccionamos un elemento y realizamos sobre él la acción que queramos. </p>
+                  <pre class="fragment">
+                    <code data-trim contenteditable>
+                      $(selector).action()
+                    </code>
+                  </pre>
+                  <ul class="fragment">
+                    <li><strong>$:</strong> símbolo que indica que usamos jQuery</li>
+                    <li><strong>selector:</strong> selecciona el elemento</li>
+                    <li><strong>action:</strong> acción que ejecuta</li>
+                  </ul>
+                </section>
+                <section>
                   <h4> Selectores </h4>
-                  <style type="text/css">
-                    .tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
-                    .tg td{font-family:Arial, sans-serif;font-size:20px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-                    .tg th{font-family:Arial, sans-serif;font-size:20px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-                    .tg .tg-baqh{text-align:center;vertical-align:top}
-                    .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
-                    .tg .tg-5frq{font-style:italic;text-align:center;vertical-align:top}
-                    @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
                     <div class="tg-wrap"><table class="tg">
                       <tr>
                         <th class="tg-amwm">Selector</th>
@@ -204,6 +214,97 @@
                     </table></div>
                     <br><hr>
                   <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp"> jQuery Selectors | w3schools.com </a>
+                </section>
+                <section>
+                  <h4> Eventos </h4>
+                  <table class="tg">
+                    <tr>
+                      <th class="tg-amwm">Ratón</th>
+                      <th class="tg-amwm">Teclado</th>
+                      <th class="tg-amwm">Formularios</th>
+                      <th class="tg-amwm">Ventana</th>
+                    </tr>
+                    <tr>
+                      <td class="tg-baqh">click</td>
+                      <td class="tg-baqh">keypress</td>
+                      <td class="tg-baqh">submit</td>
+                      <td class="tg-baqh">load</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-baqh">dblclick</td>
+                      <td class="tg-baqh">keydown</td>
+                      <td class="tg-baqh">change</td>
+                      <td class="tg-baqh">resize</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-baqh">mouseenter</td>
+                      <td class="tg-baqh">keyup</td>
+                      <td class="tg-baqh">focus</td>
+                      <td class="tg-baqh">scroll</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-baqh">mouseleave</td>
+                      <td class="tg-baqh"></td>
+                      <td class="tg-baqh">blur</td>
+                      <td class="tg-baqh">unload</td>
+                    </tr>
+                  </table>
+                  <br><hr>
+                  <a href="http://www.w3schools.com/jquery/jquery_events.asp"> jQuery Events | w3schools.com </a>
+                </section>
+                <section>
+                  <h4> Manipulación de DOM </h4>
+                  <p> Usando los selectores, manipulamos elementos DOM siguiendo una metodología GET/SET. </p>
+                </section>
+                <section>
+                  <h4> Manipulación de DOM / GET </h4>
+                  <pre>
+                    <code data-trim contenteditable>
+                      <h1 id="cabeza">Estoy aquí obligado para firmar</h1>
+                      <input type="text" id="nombre" value="Cualquiera">
+
+$("#cosa").html();
+$("#cosa").text();
+$("#nombre").val();
+                    </code>
+                  </pre>
+                </section>
+                  <section>
+                  <h4> Manipulación de DOM / GET </h4>
+                  <ul>
+                    <li><strong>html(): obtiene el html del elemento</strong>
+                      <pre>
+                        <code data-trim contenteditable>
+                          <h1 id="cabeza">Estoy aquí obligado para firmar</h1>
+                        </code>
+                      </pre>
+                    <li><strong>text(): obtiene el texto del emento</strong>
+                      <pre>
+                        <code data-trim contenteditable>
+                          Estoy aquí obligado para firmar</li>
+                        </code>
+                      </pre>
+                    <li><strong>val(): obtiene el valor del elemento</strong>
+                      <pre>
+                        <code data-trim contenteditable>
+                          Cualquiera
+                        </code>
+                      </pre>
+                  </ul>
+                </section>
+                <section>
+                  <h4> Manipulación de DOM / SET </h4>
+                  <pre>
+                    <code data-trim contenteditable>
+                      <h1 id="cabeza">Estoy aquí obligado para firmar</h1>
+                      <input type="text" id="nombre" value="nadie">
+
+
+$("#cosa").html("<h1 id="cabeza">Estoy aquí MUY INTERESADO</h1>");
+$("#cosa").text("Estoy aquí MUY INTERESADO");
+$("#nombre").val("Nadie"));
+                    </code>
+                  </pre>
                 </section>
               </section>
 
