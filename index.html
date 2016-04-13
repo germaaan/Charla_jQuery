@@ -212,8 +212,6 @@
                         <td class="tg-baqh">Todos los elementos con un atributo href igual a "index.html"</td>
                       </tr>
                     </table></div>
-                    <br><hr>
-                  <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp"> jQuery Selectors | w3schools.com </a>
                 </section>
                 <section>
                   <h4> Eventos </h4>
@@ -249,8 +247,6 @@
                       <td class="tg-baqh">unload</td>
                     </tr>
                   </table>
-                  <br><hr>
-                  <a href="http://www.w3schools.com/jquery/jquery_events.asp"> jQuery Events | w3schools.com </a>
                 </section>
                 <section>
                   <h4> Manipulación de DOM </h4>
@@ -266,30 +262,37 @@
 $("#cosa").html();
 $("#cosa").text();
 $("#nombre").val();
+$("#nombre").attr("type");
                     </code>
                   </pre>
                 </section>
                   <section>
                   <h4> Manipulación de DOM / GET </h4>
                   <ul>
-                    <li><strong>html(): obtiene el html del elemento</strong>
+                    <li style="font-size: 30px;"><strong>html(): obtiene el html del elemento</strong>
                       <pre>
                         <code data-trim contenteditable>
                           <h1 id="cabeza">Estoy aquí obligado para firmar</h1>
                         </code>
                       </pre>
-                    <li><strong>text(): obtiene el texto del emento</strong>
+                    <li style="font-size: 30px;"><strong>text(): obtiene el texto del emento</strong>
                       <pre>
                         <code data-trim contenteditable>
                           Estoy aquí obligado para firmar</li>
                         </code>
                       </pre>
-                    <li><strong>val(): obtiene el valor del elemento</strong>
+                    <li style="font-size: 30px;"><strong>val(): obtiene el valor del elemento</strong>
                       <pre>
                         <code data-trim contenteditable>
                           Cualquiera
                         </code>
                       </pre>
+                      <li style="font-size: 30px;"><strong>val(): obtiene el valor del atributo del elemento</strong>
+                        <pre>
+                          <code data-trim contenteditable>
+                            text
+                          </code>
+                        </pre>
                   </ul>
                 </section>
                 <section>
@@ -303,6 +306,108 @@ $("#nombre").val();
 $("#cosa").html("<h1 id="cabeza">Estoy aquí MUY INTERESADO</h1>");
 $("#cosa").text("Estoy aquí MUY INTERESADO");
 $("#nombre").val("Nadie"));
+$("#nombre").attr("type", "textarea");
+                    </code>
+                  </pre>
+                </section>
+                <section>
+                  <h4> Manipulación de CSS </h4>
+                  <pre>
+                    <code data-trim contenteditable>
+                      .alerta {
+     font-weight: bold;
+     color: red;
+}
+
+
+$("h1").addClass("alerta");
+$("h1").removeClass("alerta");
+$("h1").toggleClass("alert");
+$("h1").css({"font-weight":"bold", "color":"red"});
+                    </code>
+                  </pre>
+                </section>
+
+                <section>
+                  <h4> Crear efectos</h4>
+                  <table class="tg">
+                    <tr>
+                      <th class="tg-baqh">Método</th>
+                      <th class="tg-baqh">Resultado</th>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">hide(velocidad, callback)</td>
+                      <td class="tg-yw4l">Oculta el elemento si está visible.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">show(velocidad, callback)</td>
+                      <td class="tg-yw4l">Muestra el elemento si está oculto.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">toggle(velocidad, callback)</td>
+                      <td class="tg-yw4l">Alterna entre visible/oculto.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">fadeIn(velocidad, callback)</td>
+                      <td class="tg-yw4l">El elemento aparece a la velocidad indicada.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">fadeOut(velocidad, callback)</td>
+                      <td class="tg-yw4l">El elemento desaparece a la velocidad indicada.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">fadeToggle(velocidad, callback)</td>
+                      <td class="tg-yw4l">Alterna entre aparecer/desaparecer.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">fadeTo(velocidad, transparencia)</td>
+                      <td class="tg-yw4l">El elemento desaparece con una transparencia entre 0-1.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">slideDown(velocidad, callback)</td>
+                      <td class="tg-yw4l">Desliza el elemento hacia abajo.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">slideUp(velocidad, callback)</td>
+                      <td class="tg-yw4l">Desliza el elemento hacia arriba.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">slideToogle(velocidad, callback)</td>
+                      <td class="tg-yw4l">Alterna entre deslizar hacia abajo/arriba.</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yw4l">stop()</td>
+                      <td class="tg-yw4l">Detiene todas las animaciones de todos los elementos.</td>
+                    </tr>
+                  </table>
+                  <div class="fragment" style="font-size: 30px;">
+                    <hr>
+                    <ul>
+                      <li> <strong>velocidad:</strong> slow | fast | milisegundos</li>
+                      <li> <strong>transparencia:</strong> 0-1</li>
+                      <li> <strong>callback:</strong> función que se ejecutará justo después</li>
+                </ul>
+              </div>
+                </section>
+                <section>
+                  <h4>Crear animaciones</h4>
+                  <pre>
+                    <code data-trim contenteditable>
+                      $("cosa").animate({
+     left: '250px',
+     opacity: '0.5',
+     height: '150px',
+     width: '150px'
+});
+                    </code>
+                  </pre>
+                </section>
+                <section>
+                  <h4>Efectos encadenados</h4>
+                  <pre>
+                    <code data-trim contenteditable>
+                      $("#cosa").css("background-color", "red").slideUp(2000)
+     .slideDown(2000);
                     </code>
                   </pre>
                 </section>
@@ -345,7 +450,7 @@ $("#nombre").val("Nadie"));
                       </code>
                     </pre>
                     <p>
-                        Usando CSS:
+                        Usando JavaScript estándar:
                         <pre>
                           <code data-trim contenteditable>
                             document.getElementById("cuadro").style.background-color = "red";
