@@ -23,7 +23,7 @@ _Texto_ liberado bajo la licencia **Creative Commons Attribution-ShareAlike 4.0 
 sudo apt-get install postgresql
 
 sudo su - postgres
-wget https://raw.githubusercontent.com/germaaan/calificaPelis/master/conf/db_create.sql
+wget https://gist.githubusercontent.com/germaaan/69605dbffbb44edc710876b67109a870/raw/1b4029d27d006d4459bf1491a865439be9ade32b/db_create.sql
 psql -U postgres -f db_create.sql
 exit
 ```
