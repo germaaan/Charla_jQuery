@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    script(src='/js/peliculas_data.js')
+
+    .col-xs-12(style='height:22px;')
+    .container
+        .row
+            .container.col-md-4
+                h2(style='text-align: center') Seleccionar película:
+                .col-xs-12(style='height:14px;')
+                form.form-horizontal(role='form')
+                    .form-group
+                        .center-block
+                            select#listado.form-control
+                    .form-group
+                        .center-block
+                            button#ver.btn.btn-default.center-block(type='button') Ver críticas
+                            br
+                            button#parpadear.btn.btn-default.center-block(type='button') Parpadear críticas
+
+            .container.col-md-8
+                h1.col-md-5.col-md-offset-3 Pelicula
+                .col-xs-12(style='height:14px;')
+                form.form-horizontal(role='form')
+                    .form-group
+                        label.control-label.col-sm-5(for='director') Director:
+                        .col-md-7
+                            input#director.form-control(type='text', style='background-color: white;', readonly='')
+                    .form-group
+                        label.control-label.col-sm-5(for='anio') Año:
+                        .col-sm-7
+                            input#anio.form-control(type='text', style='background-color: white;', readonly='')
+                    .form-group
+                        label.control-label.col-sm-5(for='genero') Género:
+                        .col-sm-7
+                            input#genero.form-control(type='text', style='background-color: white;', readonly='')
+                .col-xs-12(style='height:25px;')
+
+    .container
+        ul#lista-comentarios.list-group(style='height: 43%; overflow-y: scroll;')

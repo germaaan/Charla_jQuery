@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    script(src='/js/criticas_insert.js')
+
+    .col-md-4.col-md-offset-4.text-center
+        h2 Añadir críticas
+        .col-xs-12(style='height:14px;')
+        form#insertar.form-horizontal(role='form', action='', method='post')
+            .form-group
+                label.control-label.col-sm-2(for='pelicula') Pelicula:
+                .col-sm-10
+                    select#pelicula.form-control(name='pelicula', required='')
+            .form-group
+                label.control-label.col-sm-2(for='usuario') Usuario:
+                .col-sm-10
+                    input#usuario.form-control(name='usuario', type='text', maxlength='50', pattern='[A-Za-z0-9]+', title='Solo se pueden usar letras y números sin espacios. Máximo 50 caracteres.', required='')
+            .form-group
+                label.control-label.col-sm-2(for='texto') Texto:
+                .col-sm-10
+                    textarea#texto.form-control(name='texto', style='resize:none; overflow-y: scroll;', cols='50', rows='4', maxlength='500', title='Máximo 500 caracteres.', required='')
+            .form-group
+                label.control-label.col-sm-2(for='nota') Nota:
+                .col-sm-4
+                    input#nota.form-control(name='nota', type='number', step='any', min='0', max='10', title='Valor numérico entre 0 y 10. Se permiten decimales.', required='')
+            .form-group
+                .col-sm-offset-2.col-sm-10
+                    button#crear.btn.btn-default(type='submit') Crear
+
+            #flip(style='padding: 5px; text-align: center; background-color: #e5eecc; border: solid 1px #c3c3c3;') CLICK AQUÍ PARA LEER AVISO
+            #panel(style='padding: 5px; text-align: center; background-color: #e5eecc; border: solid 1px #c3c3c3; padding: 50px; display: none;') ESTOY LEYENDO TODO LO QUE ESCRIBES

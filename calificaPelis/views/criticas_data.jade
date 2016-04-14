@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .col-md-4.col-md-offset-4.text-center
+        h2 Datos críticas añadidas
+        .col-xs-12(style='height:14px;')
+        if(datos)
+            p La siguiente crítica ha sido añadida a la base de datos:
+
+            form.form-horizontal(role='form')
+                .form-group
+                    label.control-label.col-sm-5(for='pelicula') Pelicula:
+                    .col-md-7
+                        input#pelicula.form-control(type='text', style='background-color: white;', value='#{datos.pelicula}', readonly='')
+                .form-group
+                    label.control-label.col-sm-5(for='usuario') Usuario:
+                    .col-sm-7
+                        input#usuario.form-control(type='text', style='background-color: white;', value='#{datos.usuario}', readonly='')
+                .form-group
+                    label.control-label.col-sm-5(for='texto') Texto:
+                    .col-sm-7
+                        textarea#texto.form-control(style='background-color: white; resize:none; overflow-y: scroll;', cols='50', rows='4', readonly='') #{datos.texto}
+                .form-group
+                    label.control-label.col-sm-5(for='nota') Nota:
+                    .col-sm-7
+                        input#nota.form-control(type='text', style='background-color: white;', value='#{datos.nota}', readonly='')
+
+            img.img-responsive.center-block(src='/images/ok.png', alt='imagen_ok')
+        else
+            p La crítica no ha sido añadida a la base de dato aunque no se ha producido ningún error en la base de datos.

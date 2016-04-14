@@ -1,0 +1,49 @@
+{
+	"name": "califica-pelis",
+	"version": "1.0.0",
+	"author": "Germán Martínez Maldonado (germaaan@gmail.com)",
+	"description": "Pequeña aplicación web para realizar críticas de películas",
+	"keywords": [
+		"califica",
+		"pelis"
+	],
+	"license": "GPL-3.0",
+	"main": "app.js",
+	"os": [
+		"linux"
+	],
+	"private": true,
+	"dependencies": {
+		"body-parser": "^1.13.2",
+		"cookie-parser": "^1.3.5",
+		"debug": "^2.2.0",
+		"express": "^4.13.1",
+		"jade": "^1.11.0",
+		"morgan": "^1.6.1",
+		"node-sass": "^3.4.2",
+		"pg": "^4.5.3",
+		"serve-favicon": "^2.3.0"
+	},
+	"devDependencies": {
+		"bower": "^1.7.9",
+		"js-beautify": "^1.6.2",
+		"jshint": "^2.9.1",
+		"npm-check": "^5.2.1",
+		"pm2": "^1.0.2"
+	},
+	"engines": {
+		"node": ">=4.2.6",
+		"npm": ">=2.14.12"
+	},
+	"scripts": {
+		"start": "pm2 start app.js && pm2 save",
+		"stop": "pm2 stop app",
+		"libs": "bower install --allow-root",
+		"sass": "node-sass public/style/scss/*.scss -o public/style/css",
+		"postinstall": "npm run libs && npm run sass",
+		"restart": "pm2 restart app.js && pm2 save",
+		"check": "npm-check",
+		"beautify": "js-beautify --indent-with-tabs --brace-style collapse -r *.js *.json app/*.js app/routes/*.js public/js/*.js",
+		"jshint": "jshint *.js *.json app/*.js app/routes/*.js public/js/*.js"
+	}
+}

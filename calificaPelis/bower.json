@@ -1,0 +1,13 @@
+{
+	"name": "califica-pelis",
+	"version": "1.0.0",
+	"author": "Germán Martínez Maldonado (germaaan@gmail.com)",
+	"description": "Pequeña aplicación web para realizar críticas de películas",
+	"main": "app.js",
+	"license": "GPL-3.0",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "bootstrap-sass-official#3.3.5",
+		"jquery": "jquery#2.1.4"
+	}
+}

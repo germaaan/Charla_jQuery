@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    script(src='/js/peliculas_update_delete.js')
+
+    .col-md-4.col-md-offset-4.text-center
+        h2 Eliminar películas
+        .col-xs-12(style='height:14px;')
+        form#insertar.form-horizontal(role='form', action='', method='post')
+            .form-group
+                label.control-label.col-sm-2(for='nombre') Nombre:
+                .col-sm-10
+                    select#nombre.form-control(name='nombre', required='')
+            .form-group
+                label.control-label.col-sm-2(for='director') Director:
+                .col-sm-10
+                    input#director.form-control(name='director', type='text', style='background-color: white;', readonly='')
+            .form-group
+                label.control-label.col-sm-2(for='genero') Género:
+                .col-sm-10
+                    input#genero.form-control(name='genero', type='text', style='background-color: white;', readonly='')
+            .form-group
+                label.control-label.col-sm-2(for='anio') Año:
+                .col-sm-4
+                    input#anio.form-control(name='anio', type='text', style='background-color: white;', readonly='')
+            .form-group
+                .col-sm-offset-2.col-sm-10
+                    button#eliminar.btn.btn-default(type='submit') Eliminar
